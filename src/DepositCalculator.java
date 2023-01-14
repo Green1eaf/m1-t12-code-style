@@ -9,6 +9,9 @@ public class DepositCalculator {
         return round(amount + amount * 0.06 * depositPeriod);
     }
 
+    /* Для имени метода round() лучше подобрать более конкретное название,
+    содержащее глагол (обычно "round" воспринимается как прилагательное "круглый").
+    Например, makeRound(), doRound() и т.д. */
     double round(double value) {
         double scale = Math.pow(10, 2);
 
@@ -27,6 +30,10 @@ public class DepositCalculator {
         period = scanner.nextInt();
         System.out.println("Выберите тип вклада, 1 - вклад с обычным процентом, 2 - вклад с капитализацией:");
         action = scanner.nextInt();
+
+        /* Переменная out абстрактная - не совсем понятно конкретно, что в ней скрыто.
+        Попробуй подобрать название, связанное с тем, во что превратятся вложения по истечению срока вклада.
+        Например, result, depositResult и т.д.*/
         double out = 0;
 
         if (action == 1) {
